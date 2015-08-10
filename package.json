@@ -1,6 +1,6 @@
 {
   "name": "mongoose-createdat-updatedat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A mongoose plugin that adds createdAt and updatedAt fields to subscribed models in order to avoid redundancy",
   "main": "./lib/mongoose-createdat-updatedat.js",
   "scripts": {
