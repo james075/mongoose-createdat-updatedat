@@ -2,6 +2,12 @@
 
 A mongoose plugin that adds createdAt and updatedAt fields to subscribed models in order to avoid redundancy.
 
+###Install via npm:
+
+```bash
+$> npm install mongoose-createdat-updatedat --save
+```
+
 ###Usage:
 
 ```js
