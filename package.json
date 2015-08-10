@@ -1,0 +1,28 @@
+{
+  "name": "mongoose-createdat-updatedat",
+  "version": "1.0.0",
+  "description": "A mongoose plugin that adds createdAt and updatedAt fields to subscribed models in order to avoid redundancy",
+  "main": "./lib/mongoose-createdat-updatedat.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/james075/mongoose-createdAt-updatedAt.git"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "lifecycle",
+    "createdAt",
+    "updatedAt",
+    "moongoose",
+    "plugin"
+  ],
+  "author": "James Heng",
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "mongoose": "^4.1.1",
+    "should": "^7.0.3"
+  }
+}
