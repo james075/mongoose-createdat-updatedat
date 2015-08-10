@@ -19,7 +19,10 @@
     "moongoose",
     "plugin"
   ],
-  "author": "James Heng",
+  "author": {
+    "name": "James Heng",
+    "email": "james.heng07@gmail.com"
+  },
   "devDependencies": {
     "mocha": "^2.2.5",
     "mongoose": "^4.1.1",
