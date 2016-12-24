@@ -1,3 +1,9 @@
+// TODO: Test the plugin with non default values
+
+// TODO: The tests should not actually use the database.
+// They should test that the schema changes and the pre-save function is run
+// as it is not the intention of the tests to check that Mongoose works
+
 var should = require('should'),
   mongoose = require('mongoose'),
   Schema = mongoose.Schema,

@@ -23,9 +23,18 @@
     "name": "James Heng",
     "email": "james.heng07@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Ángel Brasero",
+      "url": "https://github.com/makmonty"
+    }
+  ],
   "devDependencies": {
     "mocha": "^2.2.5",
     "mongoose": "^4.1.1",
     "should": "^7.0.3"
+  },
+  "dependencies": {
+    "extend": "^3.0.0"
   }
 }
