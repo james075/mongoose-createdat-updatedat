@@ -18,7 +18,7 @@ User.plugin(plugin);
 
 Optionally, you can pass an options object to set the name of the fields, or to disable certain fields.
 
-### Another example:
+Another example:
 
 ```js
 var plugin = require('mongoose-createdat-updatedat');
@@ -35,13 +35,13 @@ Here, the createdAt field will be named `created_at`, and the updatedAt field wi
 ### Options:
 
 ##### createdAt
-Type: `String`
+Type: `String`  
 Default: `createdAt`
 
 Name of the createdAt field. Set to null to disable the field
 
 ##### updatedAt
-Type: `String`
+Type: `String`  
 Default: `updatedAt`
 
 Name of the updatedAt field. Set to null to disable the field
