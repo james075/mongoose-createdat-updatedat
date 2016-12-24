@@ -32,6 +32,20 @@ User.plugin(plugin, options);
 
 Here, the createdAt field will be named `created_at`, and the updatedAt field will be disabled.
 
+### Options:
+
+##### createdAt
+Type: `String`
+Default: `createdAt`
+
+Name of the createdAt field. Set to null to disable the field
+
+##### updatedAt
+Type: `String`
+Default: `updatedAt`
+
+Name of the updatedAt field. Set to null to disable the field
+
 ### Test:
 
 ```bash
