@@ -1,14 +1,14 @@
-#Mongoose-createdAt-updatedAt
+# Mongoose-createdAt-updatedAt
 
 A mongoose plugin that adds createdAt and updatedAt fields to subscribed models in order to avoid redundancy.
 
-###Install via npm:
+### Install via npm:
 
 ```bash
 $> npm install mongoose-createdat-updatedat --save
 ```
 
-###Usage:
+### Usage:
 
 ```js
 var plugin = require('mongoose-createdat-updatedat');
@@ -16,7 +16,23 @@ var User = new Schema({ ... });
 User.plugin(plugin);
 ```
 
-###Test:
+Optionally, you can pass an options object to set the name of the fields, or to disable certain fields.
+
+### Another example:
+
+```js
+var plugin = require('mongoose-createdat-updatedat');
+var User = new Schema({ ... });
+var options = {
+  createdAt: 'created_at',
+  updatedAt: null
+}
+User.plugin(plugin, options);
+```
+
+Here, the createdAt field will be named `created_at`, and the updatedAt field will be disabled.
+
+### Test:
 
 ```bash
 $> npm test

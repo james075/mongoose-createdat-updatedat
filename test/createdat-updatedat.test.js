@@ -35,7 +35,7 @@ describe('CreatedAt and UpdatedAt support', function() {
     done();
   });
 
-  it('should has "James" as firstname', function (done) {
+  it('should have "James" as firstname', function (done) {
     user.firstName.should.equal('James');
     done();
   });
