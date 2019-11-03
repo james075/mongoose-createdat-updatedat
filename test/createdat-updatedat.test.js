@@ -9,6 +9,7 @@ describe('CreatedAt and UpdatedAt support', function() {
   let UserSchema;
   let User;
   let user;
+  let createdAt;
 
   before(async function(done) {
     const mongoUri = await mongod.getConnectionString();
@@ -57,6 +58,7 @@ describe('CreatedAt and UpdatedAt support', function() {
 
       it('should have a "createdAt" field', function (done) {
         should.exist(user.createdAt);
+        createdAt = user.createdAt;
         done();
       });
 
@@ -73,6 +75,10 @@ describe('CreatedAt and UpdatedAt support', function() {
       it('should update user lastname to "Heng" without error', function (done) {
         user.lastName = 'Heng';
         user.save(done);
+      });
+
+      it('createdAt should be the same', function() {
+        user.createdAt.should.be.equal(createdAt);
       });
 
       it('updatedAt should be more recent than createdAt', function (done) {
@@ -135,6 +141,7 @@ describe('CreatedAt and UpdatedAt support', function() {
 
       it('should have a "created_at" field', function (done) {
         should.exist(user.created_at);
+        createdAt = user.created_at;
         done();
       });
 
@@ -151,6 +158,10 @@ describe('CreatedAt and UpdatedAt support', function() {
       it('should update user lastname to "Heng" without error', function (done) {
         user.lastName = 'Heng';
         user.save(done);
+      });
+
+      it('created_at should be the same', function() {
+        user.created_at.should.be.equal(createdAt);
       });
 
       it('updated_at should be more recent than created_at', function (done) {
@@ -189,6 +200,7 @@ describe('CreatedAt and UpdatedAt support', function() {
 
     it('should have a "createdAt" field', function () {
       should.exist(user.createdAt);
+      createdAt = user.createdAt;
     });
 
     it('should have an "updatedAt" field', function () {
@@ -196,7 +208,7 @@ describe('CreatedAt and UpdatedAt support', function() {
     });
 
     it('createdAt and updatedAt should have equal values', function () {
-      user.createdAt.toISOString().should.be.equal(user.updatedAt.toISOString());
+      user.createdAt.getTime().should.be.equal(user.updatedAt.getTime());
     });
 
     it('should run update query without error', async function () {
@@ -206,6 +218,10 @@ describe('CreatedAt and UpdatedAt support', function() {
     it('should have updated the user', async function () {
       user = await User.findById(user._id);
       user.firstName.should.be.equal('John');
+    });
+
+    it('createdAt should be the same', function() {
+      user.createdAt.getTime().should.be.equal(createdAt.getTime());
     });
 
     it('updatedAt should be more recent than createdAt', function () {
