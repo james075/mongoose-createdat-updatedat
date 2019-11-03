@@ -160,7 +160,7 @@ describe('CreatedAt and UpdatedAt support', function() {
     });
   });
 
-  describe('pre update hook', function() {
+  describe('pre updateOne hook', function() {
 
     let result;
 
@@ -178,12 +178,13 @@ describe('CreatedAt and UpdatedAt support', function() {
     });
 
     it('should run upsert query without error', async function () {
-      result = await user.update({ firstName: 'James' }, {upsert: true}).exec();
+      result = await user.updateOne({ firstName: 'James' }, { upsert: true }).exec();
     });
 
     it('should have upserted user', async function() {
       user = await User.findById(result.upserted[0]._id);
       should.exist(user);
+      user.firstName.should.be.equal('James');
     })
 
     it('should have a "createdAt" field', function () {
@@ -199,11 +200,15 @@ describe('CreatedAt and UpdatedAt support', function() {
     });
 
     it('should run update query without error', async function () {
-      result = await user.update({ firstName: 'John' }).exec();
+      result = await user.updateOne({ firstName: 'John' }).exec();
     });
 
-    it('updatedAt should be more recent than createdAt', async function () {
+    it('should have updated the user', async function () {
       user = await User.findById(user._id);
+      user.firstName.should.be.equal('John');
+    });
+
+    it('updatedAt should be more recent than createdAt', function () {
       user.updatedAt.should.be.greaterThan(user.createdAt);
     });
   });

@@ -2,6 +2,8 @@
 
 A mongoose plugin that adds createdAt and updatedAt fields to subscribed models in order to avoid redundancy.
 
+Now supporting query-based updates like update() or findOneAndUpdate().
+
 ### Install via npm:
 
 ```bash
